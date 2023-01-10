@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Liste des menus </h2>
+    <table class="table table-hover table-striped" border="1">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Nom de menu</th>
+            <th>Type</th>
+            <th>Nombre calories</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for menu in lesmenus %}
+            <tr>
+                <td>{{ menu.id }}</td>
+                <td>{{ menu.titre | upper }}</td>
+                <td>{{ menu.type }}</td>
+                <td>{{ menu.nbrCalories }}</td>
+                <td>{{ menu.prix }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5"> Aucun menu</td>
+            </tr>
+        {% endfor %}
+    <style>
+        h2 {
+            background-color: #789636;
+            opacity: 80%;
+            padding: 1%;
+        }
+        </style>
+
+        </tbody>
+    </table>
+{% endblock %}

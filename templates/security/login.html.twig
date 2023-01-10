@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><h2>S'identifier</h2> </a>
+
+        </div>
+    </nav>
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <form action="{{ path('login') }}" method="post">
+        <label for="username">Username:</label> <br>
+        <input type="text" id="username" name="_username" value="{{
+        last_username }}"/> <br>
+        <label for="password">Password:</label> <br>
+        <input type="password" id="password" name="_password"/> <br>
+        <button type="submit">S'identifier</button>
+    </form>
+
+    <style>
+        input[type=text],[type=password], select, textarea {
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: large;
+            resize: vertical;
+            margin: 0;
+            padding: 5%;
+            background-color: #171e24;
+            opacity: 50%;
+            color: #F5F5F5;
+
+
+
+        }
+        form {
+            padding: 125px;
+            width: 500px;
+            margin: 0 auto;
+        }
+        a{
+
+            color: white;
+            width: 800px;
+            /*margin: 0 auto;*/
+            alignment: center;
+
+        }
+        label{
+            border-radius: 10px;
+            margin: 10px;
+            font-size: large;
+            padding: 8px;
+            resize: vertical;
+            width: 55%;
+            color: #F5F5F5;
+        }
+        h2{
+            width: 900px;
+            margin: 0 auto;
+            alignment: center;
+            color: black;
+        }
+        button{
+             background-color: #789636;
+             opacity: 60%;
+             border-radius: 10px;
+             font-size: large;
+
+
+         }
+
+    </style>
+{% endblock %}

@@ -1,0 +1,42 @@
+/* Style inputs, select elements and textareas */
+/*input[type=text], select, textarea{*/
+/*    width: 100%;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 4px;*/
+/*    box-sizing: border-box;*/
+/*    resize: vertical;*/
+/*    margin: 0;*/
+/*}*/
+
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    color: white;
+
+}
+.form-control {
+    width: auto !important;
+}
+form {
+    width: 300px;
+    margin: 0 auto;
+}
+body{
+    background-image:  url('https://cdn.flipsnack.com/landing/files/flipsnacks-menu-maker-samples1');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;}
+
+table tr {
+    background-color:#ba6411;
+    opacity: 80%;
+}
+th {
+    color: black;
+}
+td {
+    color: black;
+}
+
+

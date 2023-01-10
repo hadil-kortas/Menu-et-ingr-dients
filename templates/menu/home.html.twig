@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>Liste des menus | <small><a
+                    href="{{ path('Add_menu') }}">Ajouter
+                <a href="{{ path('security_logout') }}">Se déconnecter</a></a></small>
+    </h2>
+
+    {% for msg in app.flashes('notice') %}
+        {{ msg }}
+    {% endfor %}
+
+    <style>
+        h2 {
+            background-color: #789636;
+            opacity: 80%;
+            padding: 1%;
+        }
+        a{
+            margin: 3%;
+        }
+    </style>
+    <table class="table table-hover table-striped" border="1">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Nom de menu</th>
+            <th>Type</th>
+            <th>Nombre de calories</th>
+            <th>Prix</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for menu in lesmenus %}
+            <tr>
+                <td>{{ menu.id }}</td>
+                <td>{{ menu.titre | upper }}</td>
+                <td>{{ menu.type }}</td>
+                <td>{{ menu.nbrCalories }}</td>
+                <td>{{ menu.prix }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('delete_menu', {'id':menu.id }) }}"  onclick="return confirm('Are you sure to delete!{{ menu.titre }}')">Supprimer</a>
+                    <a class="btn btn-danger" href="{{ path('edit_menu', {'id':menu.id }) }}"  onclick="return confirm('Are you sure to modify!{{ menu.titre }}')">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5"> Aucun menu</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+{% endblock %}

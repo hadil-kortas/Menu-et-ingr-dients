@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block title %}Ajouter Ingredient{% endblock %}
+{% block body %}
+    <h2> Ajouter Ingredient </h2>
+
+    <style>
+        h2 {
+            background-color: #789636;
+            opacity: 80%;
+            padding: 1%;
+        }
+    </style>
+    {{ form_start(f) }}
+    {{ form_widget(f) }}
+    {{ form_end(f) }}
+{% endblock %}

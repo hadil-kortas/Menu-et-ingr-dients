@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>List of ingredients  </h2>
+    <table class="table table-hover table-striped" border="1">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Titre</th>
+            <th>Quantité</th>
+
+            <th>Prix</th>
+            <th>Nom de menu</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for ingredient in lesingredients %}
+            <tr>
+                <td>{{ ingredient.id }}</td>
+                <td>{{ ingredient.libelle| upper }}</td>
+                <td>{{ ingredient.quantite }}</td>
+                <td>{{ ingredient.cout }}</td>
+
+                <td>{{ ingredient.Menu.titre }}</td>
+                <td>
+                    <a class="btn btn-info" href="{{ path('show_ingredient', {'id':ingredient.id }) }}">Voir</a>
+                </td>
+
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5"> Aucun ingredient</td>
+            </tr>
+        {% endfor %}
+
+        <style>
+            h2 {
+                background-color: #789636;
+                opacity: 80%;
+                padding: 1%;
+            }
+        </style>
+
+        </tbody>
+    </table>
+{% endblock %}

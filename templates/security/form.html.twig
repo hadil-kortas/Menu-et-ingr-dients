@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><h2>Inscrivez-vous</h2> </a>
+    </div>
+</nav>
+
+    <form name="user" method="post">
+        <div class="mb-3"><label for="user_username" class="form-label required">Nom d'utilisateur</label><input type="text" id="user_username" name="user[username]" required="required" class="form-control">        </div>
+        <div class="mb-3"><label for="user_email" class="form-label required">E-mail</label><input type="email" id="user_email" name="user[email]" required="required" class="form-control">        </div>
+        <div class="mb-3"><label for="user_plainPassword_first" class="form-label required">Mot de passe</label><input type="password" id="user_plainPassword_first" name="user[plainPassword][first]" required="required" class="form-control">        </div>
+        <div class="mb-3"><label for="user_plainPassword_second" class="form-label required">Confirmer mot-de-passe</label><input type="password" id="user_plainPassword_second" name="user[plainPassword][second]" required="required" class="form-control">        </div>
+        <button type="submit">S'inscrire</button>
+        <input type="hidden" id="user__token" name="user[_token]" value="21361b71c2453ef2f.UH_X2souJkkRJW2LDsyEYw3uCuSMTFr7svDZbnWppPo.J0qUjKxITnhCfD7KZbn3OVydWrToJhe8wJOWOQOb8L8YE7CqgBtTPGdSDg"></form>
+
+
+    <style>
+        h5 {
+            color: white;
+            width: 300px;
+            margin: 0 auto;
+
+
+        }
+         input[type=text],[type=email],[type=password], select, textarea {
+             width: 100%;
+             border: 1px solid #ccc;
+             border-radius: 10px;
+             box-sizing: border-box;
+             font-size: large;
+             resize: vertical;
+             margin: 0;
+             background-color: #171e24;
+             opacity: 50%;
+             padding: 3%;
+         }
+
+        label{
+            /*background-color: #94a91b;*/
+            /*opacity: 50%;*/
+            border-radius: 10px;
+            margin: 10px;
+            font-size: large;
+            padding: 8px;
+            resize: vertical;
+            width: 55%;
+            color: #F5F5F5;
+
+        }
+        h2{
+            width: 900px;
+            margin: 0 auto;
+            alignment: center;
+            color: black;
+        }
+        form {
+            padding: 50px;
+            width: 500px;
+            margin: 0 auto;
+        }
+        button{
+            background-color: #789636;
+            opacity: 50%;
+            border-radius: 10px;
+            font-size: large;
+
+        }
+
+
+
+
+    </style>
+
+
+{% endblock %}

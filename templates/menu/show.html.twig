@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}{{parent()}} - Edit{% endblock %}
+
+{% block body %}
+
+<h2>Title {{menu.getTitre()}}</h2><br>
+<h2>Type{{ menu.getType() }}</h2>
+<h2>Number of calories::{{ menu.getNbrCalories }}</h2>
+<h2>price{{ menu.getPrice() }}</h2>
+
+{% endblock %}
